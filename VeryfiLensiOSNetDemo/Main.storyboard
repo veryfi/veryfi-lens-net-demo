@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ufS-5J-xhz">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="6nk-5X-vby">
+            <objects>
+                <viewController id="ufS-5J-xhz" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HJ4-nG-NXj"/>
+                        <viewControllerLayoutGuide type="bottom" id="nE7-7q-Lw9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rO1-mV-uf9">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dlb-kV-F02" userLabel="OpenLens">
+                                <rect key="frame" x="66" y="773.66666666666663" width="261" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Open Camera"/>
+                                <connections>
+                                    <action selector="OpenLens:" destination="ufS-5J-xhz" eventType="touchUpInside" id="igl-eG-B6J"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Logs: " textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTL-wh-UOD">
+                                <rect key="frame" x="28" y="67" width="337" height="687.66666666666663"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="NTL-wh-UOD" secondAttribute="trailing" constant="12" id="1ll-iK-bl1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dlb-kV-F02" secondAttribute="trailing" constant="50" id="2JD-3k-Vpq"/>
+                            <constraint firstItem="nE7-7q-Lw9" firstAttribute="top" secondItem="Dlb-kV-F02" secondAttribute="bottom" constant="10" id="3SP-Fp-pxB"/>
+                            <constraint firstItem="Dlb-kV-F02" firstAttribute="leading" secondItem="rO1-mV-uf9" secondAttribute="leadingMargin" constant="50" id="F10-PX-NRg"/>
+                            <constraint firstItem="Dlb-kV-F02" firstAttribute="leading" secondItem="rO1-mV-uf9" secondAttribute="leadingMargin" constant="50" id="KMJ-sa-PWH"/>
+                            <constraint firstItem="Dlb-kV-F02" firstAttribute="top" secondItem="NTL-wh-UOD" secondAttribute="bottom" constant="19" id="byV-dy-cQm"/>
+                            <constraint firstItem="NTL-wh-UOD" firstAttribute="top" secondItem="HJ4-nG-NXj" secondAttribute="bottom" constant="8" symbolic="YES" id="cxN-cf-kJs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dlb-kV-F02" secondAttribute="trailing" constant="50" id="ndP-HJ-P6A"/>
+                            <constraint firstItem="NTL-wh-UOD" firstAttribute="leading" secondItem="rO1-mV-uf9" secondAttribute="leadingMargin" constant="12" id="vdr-tM-5Eu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Logs" destination="NTL-wh-UOD" id="NAQ-9J-Uka"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rf2-WI-0AB" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="967" y="62"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
