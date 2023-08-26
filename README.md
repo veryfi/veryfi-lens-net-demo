@@ -38,7 +38,55 @@ This is an example of how to use Veryfi Lens Receipts & Invoices in your app, yo
 
 ## How to run this project <a name="configuration"></a>
 
-- Run the project
+Running iOS project:
+
+Add Veryfi Nuget repo configuration to Visual Studio(right-click on Packages and then Manage NuGet Packages).
+
+<img width="372" alt="Screen Shot 2022-02-11 at 12 02 30 PM" src="https://github.com/veryfi/veryfi-lens-net-demo/assets/8684090/67056cee-22a0-41e6-9c8e-75af26119fe2">
+
+<img width="889" alt="Screen Shot 2022-02-09 at 3 06 20 PM" src="https://github.com/veryfi/veryfi-lens-net-demo/assets/8684090/60813674-5b70-4ecc-9846-700bf586d4d6">
+
+Click on package source
+
+<img width="298" alt="Screen Shot 2022-02-09 at 3 06 37 PM" src="https://github.com/veryfi/veryfi-lens-net-demo/assets/8684090/c7cbf7b3-bce0-4e54-87d2-022cba62c5e1">
+
+Now select Configure Sources…
+
+<img width="298" alt="Screen Shot 2022-02-09 at 3 06 44 PM" src="https://github.com/veryfi/veryfi-lens-net-demo/assets/8684090/29b324ac-0b9d-4e4c-83a1-72b340c81dcb">
+
+Click add source
+
+<img width="741" alt="Screen Shot 2022-02-09 at 3 06 55 PM" src="https://github.com/veryfi/veryfi-lens-net-demo/assets/8684090/06c7f836-af1b-4e48-b71c-6098606ec577">
+
+Set up the Veryfi Nuget repo URL and your username and password (the same that were created in the Hub in the Xamarin section)
+
+<img width="493" alt="Screen Shot 2022-02-09 at 3 33 06 PM" src="https://github.com/veryfi/veryfi-lens-net-demo/assets/8684090/1625029a-a25f-4fa4-8b9e-73b9625f9a72">
+
+Now click Add Source and now you have the Veryfi Nuget source on packages marketplace and the VeryfiLensiOSNetBinding plugin, add this package to your project.
+
+Set up your project to use Lens SDK:
+
+Add this to your Info.plist file:
+```
+<key>NSCameraUsageDescription</key>
+<string>Scan Documents</string>
+<key>NSPhotoLibraryAddUsageDescription</key>
+<string>Access Photo Gallery for Document Backups</string>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>Access Photo Gallery for Document Uploads</string>
+```
+Update your Entitlements.plist changing the menu in the top right section to `Entitlements`
+Make sure that `Keychaing Sharing` switch is on
+
+Set your credentials in ViewController.cs and you should be ready to run the project
+```
+const string CLIENT_ID = "XXXXX";
+const string AUTH_USRNE = "XXXXX";
+const string AUTH_API_K = "XXXXX";
+const string API_URL = "XXXXX";
+
+```
+
 
 ## Lens iOS Examples <a name="examples"></a>
 You can find some example projects, which are the different versions of Lens that we currently offer:
