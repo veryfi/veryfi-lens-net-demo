@@ -9,6 +9,8 @@ public partial class ViewController : UIViewController
     const string AUTH_API_K = "XXXX"; //Replace with your apiKey
     const string API_URL = "XXXX"; //Replace with your url
 
+    VeryfiLensDelegateListener _veryfiLensDelegate;
+
     public ViewController() : base(nameof(ViewController), null)
     {
     }
@@ -32,7 +34,8 @@ public partial class ViewController : UIViewController
 
     private void SetUpVeryfiLensDelegate()
     {
-        VeryfiLens.Shared.Delegate = new VeryfiLensDelegateListener(this);
+        _veryfiLensDelegate = new VeryfiLensDelegateListener(this);
+        VeryfiLens.Shared.Delegate = _veryfiLensDelegate;
     }
 
     private void SetUpVeryfiLens()
