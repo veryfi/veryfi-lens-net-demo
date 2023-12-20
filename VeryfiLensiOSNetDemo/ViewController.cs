@@ -53,6 +53,12 @@ public partial class ViewController : UIViewController
                 "bill",
                 "other"
         };
+        var tags = new string[]
+        {
+                "Tag 1",
+                "Tag 2",
+                "Tag 3"
+        };
         VeryfiLensSettings veryfiLensSettings = new VeryfiLensSettings
         {
             ShowDocumentTypes = true,
@@ -83,6 +89,7 @@ public partial class ViewController : UIViewController
             AutoRotateIsOn = true,
             ExternalId = "testExternalId1234",
             GalleryIsOn = true,
+            Tags = tags,
             AllowSubmitUndetectedDocsIsOn = true
         };
         var veryfiLensCredentials = new VeryfiLensCredentials(CLIENT_ID, AUTH_USRNE, AUTH_API_K, API_URL);
@@ -100,7 +107,6 @@ public partial class ViewController : UIViewController
         VeryfiLens.Shared.ConfigureWith(veryfiLensCredentials, veryfiLensSettings, completion);
         SetCategories();
         SetCustomers();
-        SetTags();
         SetCostCodes();
 
     }
@@ -119,21 +125,6 @@ public partial class ViewController : UIViewController
             costCodes[i] = job;
         }
         VeryfiLens.Shared.Settings.CostCodes = costCodes;
-    }
-
-    private void SetTags()
-    {
-        var tags = new VeryfiLensTag[10];
-        for (int i = 0; i < 10; i++)
-        {
-            var tag = new VeryfiLensTag
-            {
-                TagId = i,
-                Name = "Tag Number " + i
-            };
-            tags[i] = tag;
-        }
-        VeryfiLens.Shared.Settings.CoreTags = tags;
     }
 
     private void SetCustomers()
