@@ -7,7 +7,7 @@ using Org.Json;
 
 namespace VeryfiLensAndroidNetDemo;
 
-[Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+[Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
 public class MainActivity : AppCompatActivity
 {
     const string CLIENT_ID = "YOUR_CLIENT_ID";
@@ -67,7 +67,6 @@ public class MainActivity : AppCompatActivity
             MultipleDocumentsIsOn = true,
             LocationServicesIsOn = true,
             MoreMenuIsOn = true,
-            ShieldProtectionIsOn = true,
             FloatMenu = true,
             Categories = categories,
             PrimaryColor = "#53BF8A",
@@ -121,8 +120,9 @@ public class MainActivity : AppCompatActivity
 
     private void ShowLogs(string log)
     {
+        var json = new JSONObject(log);
         var tv_logs = FindViewById<TextView>(Resource.Id.tv_logs);
-        var text = tv_logs.Text + log + "\n";
+        var text = tv_logs.Text + json.ToString(2) + "\n";
         tv_logs.Text = text;
     }
 

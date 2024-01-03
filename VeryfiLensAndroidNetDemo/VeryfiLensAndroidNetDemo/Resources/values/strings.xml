@@ -1,8 +1,9 @@
 ﻿<resources>
-    <string name="app_name">VeryfiLensAndroidNetDemo</string>
+    <string name="app_name">VeryfiNet</string>
     <string name="lens_demo">Lens Demo</string>
     <string name="action_settings">Settings</string>
     <string name="camera">Camera</string>
 </resources>
 
 
+    
