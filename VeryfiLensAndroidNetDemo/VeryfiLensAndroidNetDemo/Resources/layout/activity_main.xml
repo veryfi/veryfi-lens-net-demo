@@ -1,34 +1,247 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+                                                     xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                     xmlns:tools="http://schemas.android.com/tools"
+                                                     android:layout_width="match_parent"
+                                                     android:layout_height="match_parent"
+                                                     tools:context=".screens.main.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            app:title="@string/app_name"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="wrap_content"
+            android:background="?android:attr/colorBackground">
+
+        <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginEnd="2dp"
+                app:titleCentered="true"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/veryfi_lens_content_inset_small"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <Button
-        android:id="@+id/fab"
-        android:text="@string/camera"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_margin="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/veryfi_logo"
+                    android:layout_width="180dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_veryfi_logo_black"/>
+
+            <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/solutions_card"
+                    style="@style/CardContainer"
+                    android:layout_marginBottom="20dp">
+            >
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <TextView
+                            style="@style/CardTitle"
+                            android:text="@string/solutions"/>
+
+                    <!-- Receipts/Invoices -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/btn_receipts"
+                            style="@style/OptionsContainer"
+                            android:paddingTop="8dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/OptionsLabel"
+                                android:drawableStart="@drawable/outline_receipt_24"
+                                android:text="@string/receipts_invoices_lens"
+                                tools:ignore="MissingConstraints"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/btn_receipts_settings"
+                                style="@style/OptionsSettings"
+                                tools:ignore="MissingConstraints"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Long receipts -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/btn_long_receipts"
+                            style="@style/OptionsContainer">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/OptionsLabel"
+                                android:drawableStart="@drawable/outline_receipt_long_24"
+                                android:text="@string/long_receipts_lens"
+                                tools:ignore="MissingConstraints"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/btn_long_receipts_settings"
+                                style="@style/OptionsSettings"
+                                tools:ignore="MissingConstraints"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Checks -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/btn_checks"
+                            style="@style/OptionsContainer">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/OptionsLabel"
+                                android:drawableStart="@drawable/outline_fact_check_24"
+                                android:text="@string/checks_lens"
+                                tools:ignore="MissingConstraints"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/btn_checks_settings"
+                                style="@style/OptionsSettings"
+                                tools:ignore="MissingConstraints"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Credit cards -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/btn_credit_cards"
+                            style="@style/OptionsContainer">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/OptionsLabel"
+                                android:drawableStart="@drawable/outline_credit_card_24"
+                                android:text="@string/credit_cards_lens"
+                                tools:ignore="MissingConstraints"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/btn_credit_cards_settings"
+                                style="@style/OptionsSettings"
+                                tools:ignore="MissingConstraints"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Business cards -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/btn_business_cards"
+                            style="@style/OptionsContainer">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/OptionsLabel"
+                                android:drawableStart="@drawable/outline_contact_phone_24"
+                                android:text="@string/business_cards_lens"
+                                tools:ignore="MissingConstraints"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/btn_business_cards_settings"
+                                style="@style/OptionsSettings"
+                                tools:ignore="MissingConstraints"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- OCR Lens -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/btn_ocr"
+                            style="@style/OptionsContainer">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/OptionsLabel"
+                                android:drawableStart="@drawable/ic_veryfi_lens_ocr"
+                                android:text="@string/ocr_lens"
+                                tools:ignore="MissingConstraints"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/btn_ocr_settings"
+                                style="@style/OptionsSettings"
+                                tools:ignore="MissingConstraints"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- W2 Lens -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/btn_w2"
+                            style="@style/OptionsContainer">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/OptionsLabel"
+                                android:drawableStart="@drawable/ic_veryfi_lens_document_capture"
+                                android:text="@string/w2_lens"
+                                tools:ignore="MissingConstraints"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/btn_w2_settings"
+                                style="@style/OptionsSettings"
+                                tools:ignore="MissingConstraints"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- W9 Lens-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/btn_w9"
+                            style="@style/OptionsContainer">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/OptionsLabel"
+                                android:drawableStart="@drawable/ic_veryfi_lens_document_capture"
+                                android:text="@string/w9_lens"
+                                tools:ignore="MissingConstraints"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/btn_w9_settings"
+                                style="@style/OptionsSettings"
+                                tools:ignore="MissingConstraints"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Bank Statements Lens-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/btn_bank_statements"
+                            style="@style/OptionsContainer">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/OptionsLabel"
+                                android:drawableStart="@drawable/ic_veryfi_lens_document_capture"
+                                android:text="@string/bank_statements_lens"
+                                tools:ignore="MissingConstraints"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/btn_bank_statements_settings"
+                                style="@style/OptionsSettings"
+                                tools:ignore="MissingConstraints"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Barcode Lens-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/btn_barcode"
+                            style="@style/OptionsContainer"
+                            android:paddingBottom="8dp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/OptionsLabel"
+                                android:drawableStart="@drawable/ic_veryfi_lens_document_capture"
+                                android:text="@string/barcode_lens"
+                                tools:ignore="MissingConstraints"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/btn_barcode_settings"
+                                style="@style/OptionsSettings"
+                                tools:ignore="MissingConstraints"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

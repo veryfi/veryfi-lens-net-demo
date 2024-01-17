@@ -1,6 +1,7 @@
 ﻿using Android.Runtime;
 using Android.Views;
 using AndroidX.AppCompat.App;
+using AndroidX.ConstraintLayout.Widget;
 using Com.Veryfi.Lens;
 using Com.Veryfi.Lens.Helpers;
 using Org.Json;
@@ -24,10 +25,73 @@ public class MainActivity : AppCompatActivity
         SetUpVeryfiLens();
         SetUpVeryfiLensDelegate();
 
-        var fab = FindViewById<Button>(Resource.Id.fab);
-        fab.Click += FabOnClick;
+        ListenerEvents();
+
     }
 
+    private void ListenerEvents()
+    {
+        var btnReceipts = FindViewById<ConstraintLayout>(Resource.Id.btn_receipts);
+        if (btnReceipts != null)
+        {
+            btnReceipts.Click += FabOnClick;
+        }
+
+        var btnLongReceipts = FindViewById<ConstraintLayout>(Resource.Id.btn_long_receipts);
+        if (btnLongReceipts != null)
+        {
+            btnLongReceipts.Click += FabOnClick;
+        }
+
+        var btnChecks = FindViewById<ConstraintLayout>(Resource.Id.btn_checks);
+        if (btnChecks != null)
+        {
+            btnChecks.Click += FabOnClick;
+        }
+
+        var btnCreditCards = FindViewById<ConstraintLayout>(Resource.Id.btn_credit_cards);
+        if (btnCreditCards != null)
+        {
+            btnCreditCards.Click += FabOnClick;
+        }
+
+        var btnBusinessCards = FindViewById<ConstraintLayout>(Resource.Id.btn_business_cards);
+        if (btnBusinessCards != null)
+        {
+            btnBusinessCards.Click += FabOnClick;
+        }
+
+        var btnOcr = FindViewById<ConstraintLayout>(Resource.Id.btn_ocr);
+        if (btnOcr != null)
+        {
+            btnOcr.Click += FabOnClick;
+        }
+
+        var btnW2 = FindViewById<ConstraintLayout>(Resource.Id.btn_w2);
+        if (btnW2 != null)
+        {
+            btnW2.Click += FabOnClick;
+        }
+
+        var btnW9 = FindViewById<ConstraintLayout>(Resource.Id.btn_w9);
+        if (btnW9 != null)
+        {
+            btnW9.Click += FabOnClick;
+        }
+
+        var btnBankStatements = FindViewById<ConstraintLayout>(Resource.Id.btn_bank_statements);
+        if (btnBankStatements != null)
+        {
+            btnBankStatements.Click += FabOnClick;
+        }
+
+        var btnBarcode = FindViewById<ConstraintLayout>(Resource.Id.btn_barcode);
+        if (btnBarcode != null)
+        {
+            btnBarcode.Click += FabOnClick;
+        }
+    }
+    
     private void FabOnClick(object sender, EventArgs eventArgs)
     {
         VeryfiLens.ShowCamera();
@@ -121,9 +185,6 @@ public class MainActivity : AppCompatActivity
     private void ShowLogs(string log)
     {
         var json = new JSONObject(log);
-        var tv_logs = FindViewById<TextView>(Resource.Id.tv_logs);
-        var text = tv_logs.Text + json.ToString(2) + "\n";
-        tv_logs.Text = text;
     }
 
     private class VeryfiLensDelegateListener : Java.Lang.Object, IVeryfiLensDelegate

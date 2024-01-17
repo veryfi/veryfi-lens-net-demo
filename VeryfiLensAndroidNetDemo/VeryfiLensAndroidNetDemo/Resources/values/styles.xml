@@ -1,21 +1,148 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    
+
+      <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
 
-    <style name="AppTheme.NoActionBar" parent="AppTheme">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="OptionsContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+    <style name="OptionsLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawableStart">@drawable/outline_receipt_24</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:drawablePadding">16dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+    </style>
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+    <style name="OptionsSettings">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:src">@drawable/ic_vector_settings</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+    </style>
+
+    <style name="CardContainer" parent="Widget.Material3.CardView.Elevated">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/veryfi_lens_content_inset_small</item>
+        <item name="android:layout_marginTop">@dimen/veryfi_lens_content_inset_medium</item>
+        <item name="android:layout_marginRight">@dimen/veryfi_lens_content_inset_small</item>
+        <item name="cardCornerRadius">5dp</item>
+        <item name="cardElevation">6dp</item>
+        <item name="android:backgroundTint">@color/veryfi_lens_demo_card_background</item>
+    </style>
+
+    <style name="CardTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textAppearance">?attr/textAppearanceTitleMedium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="VeryfiLensDemoButtonStyle" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/veryfi_lens_demo_navy</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/ic_veryfi_lens_demo_background_gradient</item>
+        <item name="backgroundTint">@null</item>
+    </style>
+
+    <style name="VeryfiLensDemoButtonOutlineStyle" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textColor">@color/veryfi_lens_demo_text</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/veryfi_lens_demo_button_outline</item>
+        <item name="cornerRadius">5dp</item>
+    </style>
+
+    <style name="VeryfiLensDemoButtonOutlineIconStyle" parent="Widget.Material3.Button.OutlinedButton.Icon">
+        <item name="android:textColor">@color/veryfi_lens_demo_text</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/veryfi_lens_demo_button_outline</item>
+        <item name="cornerRadius">5dp</item>
+    </style>
+
+    <style name="VeryfiLensDemoItemIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/veryfi_lens_demo_shape_background</item>
+        <item name="android:width">34dp</item>
+        <item name="android:height">34dp</item>
+        <item name="shapeAppearance">@style/VeryfiLensDemoItemIndicatorShape</item>
+    </style>
+
+    <style name="VeryfiLensDemoItemIndicatorShape" parent="ShapeAppearance.M3.Sys.Shape.Corner.Full">
+        <item name="cornerSize">5dp</item>
+    </style>
+
+    <style name="VeryfiLensDemoTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/color_veryfi_lens_demo_selector_outline_stroker</item>
+        <item name="boxStrokeErrorColor">@color/veryfi_lens_demo_negative_call_out</item>
+        <item name="hintTextColor">@color/veryfi_lens_demo_text</item>
+    </style>
+
+    <style name="VeryfiLensDemoChipIconStyle" parent="Widget.Material3.Chip.Input.Icon.Elevated">
+        <item name="chipBackgroundColor">@color/veryfi_lens_demo_card_background</item>
+        <item name="android:textColor">@color/veryfi_lens_demo_text</item>
+        <item name="chipStrokeColor">@color/veryfi_lens_demo_text</item>
+        <item name="chipCornerRadius">5dp</item>
+    </style>
+
+    <style name="VeryfiLensDemopopupOverflowMenu" parent="@style/Widget.MaterialComponents.PopupMenu.Overflow">
+        <item name="android:popupBackground">@drawable/ic_veryfi_lens_demo_popupmenu_background</item>
+    </style>
+
+    <style name="VeryfiLensDemoMaterialAlertStyle" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="android:background">@color/veryfi_lens_demo_card_background</item>
+        <item name="shapeAppearanceOverlay">@style/VeryfiLensDemoItemIndicatorShape</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/VeryfiLensDemoTitleTextStyle</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/VeryfiLensDemoBodyTextStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/VeryfiLensDemoPositiveButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/VeryfiLensDemoNegativeButtonStyle</item>
+    </style>
+
+    <style name="VeryfiLensDemoTitleTextStyle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">@color/veryfi_lens_demo_text</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="VeryfiLensDemoBodyTextStyle" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textColor">@color/veryfi_lens_demo_text</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="VeryfiLensDemoPositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/veryfi_lens_demo_text</item>
+        <item name="rippleColor">@color/veryfi_lens_demo_text</item>
+    </style>
+
+    <style name="VeryfiLensDemoNegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/veryfi_lens_demo_text</item>
+        <item name="rippleColor">@color/veryfi_lens_demo_text</item>
+    </style>
 
 </resources>

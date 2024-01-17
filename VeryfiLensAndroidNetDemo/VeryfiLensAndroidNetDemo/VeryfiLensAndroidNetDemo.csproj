@@ -15,8 +15,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Resources\menu\" />
+    <None Remove="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\menu\" />
+    <Folder Include="Resources\drawable\" />
   </ItemGroup>
 </Project>

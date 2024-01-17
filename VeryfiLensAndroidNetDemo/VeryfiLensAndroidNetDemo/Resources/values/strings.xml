@@ -3,6 +3,18 @@
     <string name="lens_demo">Lens Demo</string>
     <string name="action_settings">Settings</string>
     <string name="camera">Camera</string>
+    <string name="solutions">Solutions</string>
+    <string name="receipts_invoices_lens" translatable="false">Lens for Receipts &amp; Invoices</string>
+    <string name="long_receipts_lens" translatable="false">Lens for Long Receipts</string>
+    <string name="checks_lens" translatable="false">Lens for Checks</string>
+    <string name="credit_cards_lens" translatable="false">Lens for Credit Cards</string>
+    <string name="business_cards_lens" translatable="false">Lens for Business Cards</string>
+    <string name="ocr_lens" translatable="false">Lens for OCR</string>
+    <string name="w2_lens" translatable="false">Lens for W-2</string>
+    <string name="w9_lens" translatable="false">Lens for W-9</string>
+    <string name="bank_statements_lens" translatable="false">Lens for Bank Statements</string>
+    <string name="barcode_lens" translatable="false">Lens for Barcodes</string>
+    
 </resources>
 
 
