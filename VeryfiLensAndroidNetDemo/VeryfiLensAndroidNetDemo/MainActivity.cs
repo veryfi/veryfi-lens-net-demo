@@ -144,8 +144,18 @@ public class MainActivity : AppCompatActivity
 
         public void VeryfiLensSuccess(JSONObject json)
         {
-            mainActivity.ShowLogs(json.ToString());
+            mainActivity.RunOnUiThread(() =>
+            {
+                var resultsFragment = new ResultsFragments();
+                resultsFragment.SetJson(json.ToString());
+
+                var transaction = mainActivity.SupportFragmentManager.BeginTransaction();
+                transaction.Replace(Resource.Id.fragment_container, resultsFragment);
+                transaction.AddToBackStack(null); 
+                transaction.Commit();
+            });
         }
+
 
         public void VeryfiLensUpdate(JSONObject json)
         {
