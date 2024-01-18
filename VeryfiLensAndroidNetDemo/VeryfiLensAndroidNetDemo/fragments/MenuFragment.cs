@@ -1,12 +1,16 @@
+using Android.Content;
 using Android.Views;
 using AndroidX.ConstraintLayout.Widget;
 using Com.Veryfi.Lens;
+using VeryfiLensAndroidNetDemo.interfaces;
 using Fragment = AndroidX.Fragment.App.Fragment;
 
 namespace VeryfiLensAndroidNetDemo.fragments;
 
 public class MenuFragment : Fragment
 {
+    private IFragmentCommunication fragmentCommunication;
+
     public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         var view = inflater.Inflate(Resource.Layout.fragment_menu, container, false);
@@ -80,6 +84,16 @@ public class MenuFragment : Fragment
 
     private void FabOnClick(object sender, EventArgs eventArgs)
     {
+        fragmentCommunication.ResetSuccessHandled();
         VeryfiLens.ShowCamera();
+    }
+
+    public override void OnAttach(Context context)
+    {
+        base.OnAttach(context);
+        if (context is IFragmentCommunication)
+        {
+            fragmentCommunication = (IFragmentCommunication)context;
+        }
     }
 }

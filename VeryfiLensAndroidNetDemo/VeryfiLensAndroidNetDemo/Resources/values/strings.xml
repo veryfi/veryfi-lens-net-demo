@@ -14,7 +14,7 @@
     <string name="w9_lens" translatable="false">Lens for W-9</string>
     <string name="bank_statements_lens" translatable="false">Lens for Bank Statements</string>
     <string name="barcode_lens" translatable="false">Lens for Barcodes</string>
-    
+    <string name="reading_document" translatable="false">Please wait.. reading your document.</string>
 </resources>
 
 

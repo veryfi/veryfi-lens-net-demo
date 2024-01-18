@@ -6,11 +6,12 @@ using Com.Veryfi.Lens;
 using Com.Veryfi.Lens.Helpers;
 using Org.Json;
 using VeryfiLensAndroidNetDemo.fragments;
+using VeryfiLensAndroidNetDemo.interfaces;
 
 namespace VeryfiLensAndroidNetDemo;
 
 [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-public class MainActivity : AppCompatActivity
+public class MainActivity : AppCompatActivity, IFragmentCommunication
 {
     const string CLIENT_ID = "YOUR_CLIENT_ID";
     const string AUTH_USRNE = "YOUR_USERNAME";
@@ -29,9 +30,8 @@ public class MainActivity : AppCompatActivity
         var transaction = SupportFragmentManager.BeginTransaction();
         transaction.Replace(Resource.Id.fragment_container, new MenuFragment());
         transaction.Commit();
-
     }
-    
+
 
     private void SetUpVeryfiLensDelegate()
     {
@@ -41,15 +41,15 @@ public class MainActivity : AppCompatActivity
     private void SetUpVeryfiLens()
     {
         var categories = new List<string>
-            {
-                "Meals",
-                "Entertainment",
-                "Supplies"
-            };
+        {
+            "Meals",
+            "Entertainment",
+            "Supplies"
+        };
         var documentTypes = new List<DocumentType>
-            {
-                DocumentType.Receipt
-            };
+        {
+            DocumentType.Receipt
+        };
         VeryfiLensSettings veryfiLensSettings = new VeryfiLensSettings
         {
             ShowDocumentTypes = true,
@@ -113,7 +113,8 @@ public class MainActivity : AppCompatActivity
         return base.OnOptionsItemSelected(item);
     }
 
-    public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+    public override void OnRequestPermissionsResult(int requestCode, string[] permissions,
+        [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
     {
         base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
     }
@@ -134,16 +135,19 @@ public class MainActivity : AppCompatActivity
 
         public void VeryfiLensClose(JSONObject json)
         {
+            mainActivity.isSuccessHandled = false;
             mainActivity.ShowLogs(json.ToString());
         }
 
         public void VeryfiLensError(JSONObject json)
         {
+            mainActivity.isSuccessHandled = false;
             mainActivity.ShowLogs(json.ToString());
         }
 
         public void VeryfiLensSuccess(JSONObject json)
         {
+            mainActivity.isSuccessHandled = true;
             mainActivity.RunOnUiThread(() =>
             {
                 var resultsFragment = new ResultsFragments();
@@ -151,7 +155,7 @@ public class MainActivity : AppCompatActivity
 
                 var transaction = mainActivity.SupportFragmentManager.BeginTransaction();
                 transaction.Replace(Resource.Id.fragment_container, resultsFragment);
-                transaction.AddToBackStack(null); 
+                transaction.AddToBackStack(null);
                 transaction.Commit();
             });
         }
@@ -159,7 +163,30 @@ public class MainActivity : AppCompatActivity
 
         public void VeryfiLensUpdate(JSONObject json)
         {
-            mainActivity.ShowLogs(json.ToString());
+            if (!mainActivity.isSuccessHandled)
+            {
+                mainActivity.ShowLoadingFragment();
+            }
         }
+    }
+
+    private void ShowLoadingFragment()
+    {
+        if (IsActivityInForeground())
+        {
+            var transaction = SupportFragmentManager.BeginTransaction();
+            transaction.Replace(Resource.Id.fragment_container, new LoadingFragment());
+            transaction.Commit();
+        }
+    }
+
+    private bool IsActivityInForeground()
+    {
+        return !IsFinishing && !IsDestroyed;
+    }
+
+    public void ResetSuccessHandled()
+    {
+        isSuccessHandled = false;
     }
 }

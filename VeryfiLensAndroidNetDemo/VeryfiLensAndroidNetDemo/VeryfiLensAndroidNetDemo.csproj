@@ -10,6 +10,7 @@
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Com.Airbnb.Android.Lottie" Version="4.2.2" />
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.8.0" />
     <PackageReference Include="VeryfiLensAndroidNetBinding" Version="1.5.25" />
   </ItemGroup>
@@ -35,6 +36,10 @@
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
     <AndroidResource Update="Resources\layout\fragment_json.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+    <AndroidResource Update="Resources\layout\fragment_loading.xml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>
