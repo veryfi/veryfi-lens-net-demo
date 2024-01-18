@@ -1,6 +1,7 @@
 using Android.Views;
 using AndroidX.ViewPager2.Widget;
 using Google.Android.Material.Tabs;
+using Org.Json;
 using VeryfiLensAndroidNetDemo.adapters;
 using Fragment = AndroidX.Fragment.App.Fragment;
 
@@ -8,9 +9,9 @@ namespace VeryfiLensAndroidNetDemo.fragments
 {
     public class ResultsFragments : Fragment
     {
-        private string json;
+        private JSONObject json;
 
-        public void SetJson(string json)
+        public void SetJson(JSONObject json)
         {
             this.json = json;
         }

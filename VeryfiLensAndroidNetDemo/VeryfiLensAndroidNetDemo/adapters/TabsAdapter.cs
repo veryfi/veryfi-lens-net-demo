@@ -1,5 +1,6 @@
 using AndroidX.Fragment.App;
 using AndroidX.ViewPager2.Adapter;
+using Org.Json;
 using VeryfiLensAndroidNetDemo.fragments;
 using Fragment = AndroidX.Fragment.App.Fragment;
 
@@ -7,9 +8,9 @@ namespace VeryfiLensAndroidNetDemo.adapters
 {
     public class TabsAdapter : FragmentStateAdapter
     {
-        private string json;
+        private JSONObject json;
 
-        public TabsAdapter(Fragment fragment, string json) : base(fragment)
+        public TabsAdapter(Fragment fragment, JSONObject json) : base(fragment)
         {
             this.json = json;
         }

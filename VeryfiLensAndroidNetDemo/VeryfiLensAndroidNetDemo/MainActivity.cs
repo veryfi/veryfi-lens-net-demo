@@ -17,6 +17,8 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication
     const string AUTH_USRNE = "YOUR_USERNAME";
     const string AUTH_API_K = "YOUR_API_KEY";
     const string API_URL = "YOUR_URL";
+    private bool isSuccessHandled = false;
+
 
     protected override void OnCreate(Bundle savedInstanceState)
     {
@@ -151,7 +153,7 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication
             mainActivity.RunOnUiThread(() =>
             {
                 var resultsFragment = new ResultsFragments();
-                resultsFragment.SetJson(json.ToString());
+                resultsFragment.SetJson(json);
 
                 var transaction = mainActivity.SupportFragmentManager.BeginTransaction();
                 transaction.Replace(Resource.Id.fragment_container, resultsFragment);

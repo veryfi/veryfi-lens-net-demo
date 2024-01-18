@@ -1,4 +1,4 @@
-﻿<resources>
+﻿<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">VeryfiNet</string>
     <string name="lens_demo">Lens Demo</string>
     <string name="action_settings">Settings</string>
@@ -15,6 +15,20 @@
     <string name="bank_statements_lens" translatable="false">Lens for Bank Statements</string>
     <string name="barcode_lens" translatable="false">Lens for Barcodes</string>
     <string name="reading_document" translatable="false">Please wait.. reading your document.</string>
+    <string name="title_extracted_fields" translatable="false">Extracted fields</string>
+    <string name="extracted_data_id" translatable="false" tools:ignore="DuplicateDefinition">ID</string>
+    <string name="extracted_data_invoice_number" translatable="false">Invoice number</string>
+    <string name="extracted_data_currency_code" translatable="false">Currency code</string>
+    <string name="extracted_data_tax" translatable="false">Tax</string>
+    <string name="extracted_data_category" translatable="false">Category</string>
+    <string name="extracted_data_img_file_name" translatable="false">Img file name</string>
+    <string name="extracted_data_reference_number" translatable="false">Reference</string>
+    <string name="extracted_data_created_date" translatable="false">Created date</string>
+    <string name="extracted_data_img_thumbnail" translatable="false">Img thumbnail</string>
+    <string name="extracted_data_img_url" translatable="false">Img url</string>
+    <string name="extracted_data_pdf_url" translatable="false">Pdf url</string>
+    <string name="extracted_data__updated_date" translatable="false">Updated date</string>
+    <string name="extracted_data_date" translatable="false">Date</string>
 </resources>
 
 
