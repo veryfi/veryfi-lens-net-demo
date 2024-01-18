@@ -21,4 +21,10 @@
     <Folder Include="Resources\menu\" />
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Update="Resources\layout\fragment_menu.xml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
+  </ItemGroup>
 </Project>
