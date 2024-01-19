@@ -1,4 +1,5 @@
 using Android.Views;
+using AndroidX.AppCompat.App;
 using AndroidX.ViewPager2.Widget;
 using Google.Android.Material.Tabs;
 using Org.Json;
@@ -25,12 +26,22 @@ namespace VeryfiLensAndroidNetDemo.fragments
 
             var adapter = new TabsAdapter(this, json);
             viewPager.Adapter = adapter;
-            
+
             TabLayoutMediator.ITabConfigurationStrategy tabConfigurationStrategy = new TabConfigurationStrategyImpl();
             new TabLayoutMediator(tabs, viewPager, tabConfigurationStrategy).Attach();
 
+            if (Activity is AppCompatActivity activity)
+            {
+               
+                activity.SupportActionBar?.Show();
+                activity.SupportActionBar?.SetDisplayHomeAsUpEnabled(true);
+                activity.SupportActionBar?.SetTitle(Resource.String.results_fragment_title);
+            }
+
+
             return view;
         }
+
 
         private class TabConfigurationStrategyImpl : Java.Lang.Object, TabLayoutMediator.ITabConfigurationStrategy
         {

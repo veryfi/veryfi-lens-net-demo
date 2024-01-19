@@ -24,13 +24,16 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication
         base.OnCreate(savedInstanceState);
 
         SetContentView(Resource.Layout.activity_main);
+        
+        var toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.topAppBar);
+        SetSupportActionBar(toolbar);
 
         SetUpVeryfiLens();
         SetUpVeryfiLensDelegate();
 
         var transaction = SupportFragmentManager.BeginTransaction();
         transaction.Replace(Resource.Id.fragment_container, new MenuFragment());
-        transaction.Commit();
+        transaction.CommitAllowingStateLoss();
     }
 
 
@@ -99,15 +102,18 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication
 
     public override bool OnCreateOptionsMenu(IMenu menu)
     {
-        MenuInflater.Inflate(Resource.Menu.menu_main, menu);
+        
         return true;
     }
 
     public override bool OnOptionsItemSelected(IMenuItem item)
     {
-        int id = item.ItemId;
-        if (id == Resource.Id.action_settings)
+        
+        if (item.ItemId == Android.Resource.Id.Home)
         {
+            var transaction = SupportFragmentManager.BeginTransaction();
+            transaction.Replace(Resource.Id.fragment_container, new MenuFragment());
+            transaction.CommitAllowingStateLoss();
             return true;
         }
 
@@ -156,8 +162,7 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication
 
                 var transaction = mainActivity.SupportFragmentManager.BeginTransaction();
                 transaction.Replace(Resource.Id.fragment_container, resultsFragment);
-                transaction.AddToBackStack(null);
-                transaction.Commit();
+                transaction.CommitAllowingStateLoss();
             });
         }
 
@@ -177,7 +182,7 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication
         {
             var transaction = SupportFragmentManager.BeginTransaction();
             transaction.Replace(Resource.Id.fragment_container, new LoadingFragment());
-            transaction.Commit();
+            transaction.CommitAllowingStateLoss();
         }
     }
 

@@ -29,6 +29,7 @@
     <string name="extracted_data_pdf_url" translatable="false">Pdf url</string>
     <string name="extracted_data__updated_date" translatable="false">Updated date</string>
     <string name="extracted_data_date" translatable="false">Date</string>
+    <string name="results_fragment_title" translatable="false">Lens Console</string>
 </resources>
 
 

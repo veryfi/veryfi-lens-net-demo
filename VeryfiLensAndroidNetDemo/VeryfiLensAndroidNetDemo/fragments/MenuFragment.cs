@@ -1,5 +1,6 @@
 using Android.Content;
 using Android.Views;
+using AndroidX.AppCompat.App;
 using AndroidX.ConstraintLayout.Widget;
 using Com.Veryfi.Lens;
 using VeryfiLensAndroidNetDemo.interfaces;
@@ -14,6 +15,12 @@ public class MenuFragment : Fragment
     public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         var view = inflater.Inflate(Resource.Layout.fragment_menu, container, false);
+        
+        
+        if (Activity is AppCompatActivity activity)
+        {
+            activity.SupportActionBar?.Hide();
+        }
 
         ListenerEvents(view);
         return view;
