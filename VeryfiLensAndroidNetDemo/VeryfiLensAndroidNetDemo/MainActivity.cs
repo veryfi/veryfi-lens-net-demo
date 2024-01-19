@@ -19,7 +19,6 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication
     const string API_URL = "YOUR_URL";
     private bool isSuccessHandled = false;
 
-
     protected override void OnCreate(Bundle savedInstanceState)
     {
         base.OnCreate(savedInstanceState);
