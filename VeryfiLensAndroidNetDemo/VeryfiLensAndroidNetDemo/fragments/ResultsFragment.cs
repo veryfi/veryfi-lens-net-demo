@@ -25,10 +25,19 @@ namespace VeryfiLensAndroidNetDemo.fragments
 
             var adapter = new TabsAdapter(this, json);
             viewPager.Adapter = adapter;
+            
+            TabLayoutMediator.ITabConfigurationStrategy tabConfigurationStrategy = new TabConfigurationStrategyImpl();
+            new TabLayoutMediator(tabs, viewPager, tabConfigurationStrategy).Attach();
 
-            tabs.AddTab(tabs.NewTab().SetText("Extracted data"));
-            tabs.AddTab(tabs.NewTab().SetText("Json"));
             return view;
+        }
+
+        private class TabConfigurationStrategyImpl : Java.Lang.Object, TabLayoutMediator.ITabConfigurationStrategy
+        {
+            public void OnConfigureTab(TabLayout.Tab tab, int position)
+            {
+                tab.SetText(position == 0 ? "Extracted data" : "Json");
+            }
         }
     }
 }
