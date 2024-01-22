@@ -24,7 +24,7 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication
         base.OnCreate(savedInstanceState);
 
         SetContentView(Resource.Layout.activity_main);
-        
+
         var toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.topAppBar);
         SetSupportActionBar(toolbar);
 
@@ -32,7 +32,8 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication
         SetUpVeryfiLensDelegate();
 
         var transaction = SupportFragmentManager.BeginTransaction();
-        transaction.Replace(Resource.Id.fragment_container, new MenuFragment());
+        transaction.Replace(Resource.Id.fragment_container,
+            new MenuFragment(CLIENT_ID, AUTH_USRNE, AUTH_API_K, API_URL));
         transaction.CommitAllowingStateLoss();
     }
 
@@ -102,17 +103,16 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication
 
     public override bool OnCreateOptionsMenu(IMenu menu)
     {
-        
         return true;
     }
 
     public override bool OnOptionsItemSelected(IMenuItem item)
     {
-        
         if (item.ItemId == Android.Resource.Id.Home)
         {
             var transaction = SupportFragmentManager.BeginTransaction();
-            transaction.Replace(Resource.Id.fragment_container, new MenuFragment());
+            transaction.Replace(Resource.Id.fragment_container,
+                new MenuFragment(CLIENT_ID, AUTH_USRNE, AUTH_API_K, API_URL));
             transaction.CommitAllowingStateLoss();
             return true;
         }

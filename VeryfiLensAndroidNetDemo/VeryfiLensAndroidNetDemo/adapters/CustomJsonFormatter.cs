@@ -36,7 +36,7 @@ public class CustomJsonFormatter
                     foreach (var property in ((JObject)token).Properties())
                     {
                         if (!firstProperty) spannableBuilder.Append(",");
-                        spannableBuilder.Append("\n"); // Nueva línea después de cada propiedad
+                        spannableBuilder.Append("\n"); 
 
                         var keySpan = new SpannableString(indent + "  \"" + property.Name + "\": ");
                         keySpan.SetSpan(new ForegroundColorSpan(Color.Black), 0, keySpan.Length(), SpanTypes.ExclusiveExclusive);
@@ -56,7 +56,7 @@ public class CustomJsonFormatter
                     foreach (var arrayItem in ((JArray)token).Children())
                     {
                         if (!firstItem) spannableBuilder.Append(",");
-                        spannableBuilder.Append("\n"); // Nueva línea después de cada elemento
+                        spannableBuilder.Append("\n");
 
                         ApplyValueFormatting(arrayItem, indent + "");
 
@@ -92,11 +92,11 @@ public class CustomJsonFormatter
         {
             return value.Type switch
             {
-                JTokenType.String => Color.ParseColor("#00AA00"), // Verde para cadenas
-                JTokenType.Integer => Color.Red, // Rojo para enteros
-                JTokenType.Float => Color.Orange, // Naranja para flotantes
-                JTokenType.Boolean => Color.Blue, // Azul para booleanos
-                _ => Color.Gray, // Gris para otros tipos
+                JTokenType.String => Color.ParseColor("#00AA00"), 
+                JTokenType.Integer => Color.Red, 
+                JTokenType.Float => Color.Orange, 
+                JTokenType.Boolean => Color.Blue, 
+                _ => Color.Gray,
             };
         }
 
