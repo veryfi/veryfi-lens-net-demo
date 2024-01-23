@@ -125,11 +125,7 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication
     {
         base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
     }
-
-    private void ShowLogs(string log)
-    {
-        var json = new JSONObject(log);
-    }
+    
 
     private class VeryfiLensDelegateListener : Java.Lang.Object, IVeryfiLensDelegate
     {
@@ -143,13 +139,11 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication
         public void VeryfiLensClose(JSONObject json)
         {
             mainActivity.isSuccessHandled = false;
-            mainActivity.ShowLogs(json.ToString());
         }
 
         public void VeryfiLensError(JSONObject json)
         {
             mainActivity.isSuccessHandled = false;
-            mainActivity.ShowLogs(json.ToString());
         }
 
         public void VeryfiLensSuccess(JSONObject json)
@@ -165,8 +159,7 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication
                 transaction.CommitAllowingStateLoss();
             });
         }
-
-
+        
         public void VeryfiLensUpdate(JSONObject json)
         {
             if (!mainActivity.isSuccessHandled)
