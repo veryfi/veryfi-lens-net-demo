@@ -51,10 +51,9 @@ namespace VeryfiLensAndroidNetDemo.fragments
                 var jsonData = dataToShow.GetJSONObject("data");
                 if (jsonData.Has(jsonKey))
                 {
-                    var invoiceNumber = jsonData.GetJSONObject(jsonKey);
-                    var keyData = invoiceNumber.Get("value");
+                    var keyData = jsonData.GetString(jsonKey);
                     var textView = view.FindViewById<TextView>(resourceId);
-                    textView.Text = keyData.ToString();
+                    textView.Text = keyData;
                 }
             }
         }
