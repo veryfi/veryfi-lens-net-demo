@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/veryfi_lens_demo_switch_checked" android:state_checked="true" />
+    <item android:color="@color/veryfi_lens_demo_switch_unchecked" android:state_checked="false" />
+    <item android:color="@color/veryfi_lens_demo_switch_checked" android:state_active="true" />
+    <item android:color="@color/veryfi_lens_demo_switch_unchecked" android:state_active="false" />
+    <item android:color="@color/veryfi_lens_demo_switch_checked" android:state_selected="true" />
+    <item android:color="@color/veryfi_lens_demo_switch_unchecked" android:state_selected="false" />
+    <item android:color="@color/veryfi_lens_demo_switch_checked" android:state_activated="true" />
+    <item android:color="@color/veryfi_lens_demo_switch_unchecked" android:state_activated="false" />
+</selector>

@@ -1,8 +1,147 @@
-﻿<resources>
+﻿<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">VeryfiNet</string>
     <string name="lens_demo">Lens Demo</string>
     <string name="action_settings">Settings</string>
     <string name="camera">Camera</string>
+    <string name="solutions">Solutions</string>
+    <string name="receipts_invoices_lens" translatable="false">Lens for Receipts &amp; Invoices</string>
+    <string name="long_receipts_lens" translatable="false">Lens for Long Receipts</string>
+    <string name="checks_lens" translatable="false">Lens for Checks</string>
+    <string name="credit_cards_lens" translatable="false">Lens for Credit Cards</string>
+    <string name="business_cards_lens" translatable="false">Lens for Business Cards</string>
+    <string name="ocr_lens" translatable="false">Lens for OCR</string>
+    <string name="w2_lens" translatable="false">Lens for W-2</string>
+    <string name="w9_lens" translatable="false">Lens for W-9</string>
+    <string name="bank_statements_lens" translatable="false">Lens for Bank Statements</string>
+    <string name="barcode_lens" translatable="false">Lens for Barcodes</string>
+    <string name="reading_document" translatable="false">Please wait.. reading your document.</string>
+    <string name="title_extracted_fields" translatable="false">Extracted fields</string>
+    <string name="extracted_data_id" translatable="false" tools:ignore="DuplicateDefinition">ID</string>
+    <string name="extracted_data_invoice_number" translatable="false">Invoice number</string>
+    <string name="extracted_data_currency_code" translatable="false">Currency code</string>
+    <string name="extracted_data_tax" translatable="false">Tax</string>
+    <string name="extracted_data_category" translatable="false">Category</string>
+    <string name="extracted_data_img_file_name" translatable="false">Img file name</string>
+    <string name="extracted_data_reference_number" translatable="false">Reference</string>
+    <string name="extracted_data_created_date" translatable="false">Created date</string>
+    <string name="extracted_data_img_thumbnail" translatable="false">Img thumbnail</string>
+    <string name="extracted_data_img_url" translatable="false">Img url</string>
+    <string name="extracted_data_pdf_url" translatable="false">Pdf url</string>
+    <string name="extracted_data__updated_date" translatable="false">Updated date</string>
+    <string name="extracted_data_date" translatable="false">Date</string>
+    <string name="results_fragment_title" translatable="false">Lens Console</string>
+    <string name="settings_section_general" translatable="false">Settings general</string>
+    <string name="settings_auto_light_detection" translatable="false">Auto light detection</string>
+    <string name="settings_ocr_regex" translatable="false">OCR Regex</string>
+    <string name="settings_ocr_regex_value" translatable="false">[A-Z0-9]{10}</string>
+    <string name="settings_ocr_view_corner_radius" translatable="false">OCR view corner radius</string>
+    <string name="settings_ocr_view_corner_radius_value" translatable="false">20</string>
+    <string name="settings_txt_ocr_view_corner_width" translatable="false">OCR view width</string>
+    <string name="settings_txt_ocr_view_corner_width_value" translatable="false">85</string>
+    <string name="settings_txt_ocr_view_corner_height" translatable="false">OCR view height</string>
+    <string name="settings_txt_ocr_view_corner_height_value" translatable="false">8</string>
+    <string name="settings_stitch" translatable="false">Stitch</string>
+    <string name="settings_multiple_documents" translatable="false">Multiple documents</string>
+    <string name="settings_multiple_pages" translatable="false">Multiple pages</string>
+    <string name="settings_allow_undetected_docs" translatable="false">Allow submit undetected docs</string>
+    <string name="settings_auto_submit_document_capture" translatable="false">Auto submit document on capture</string>
+    <string name="settings_backup_docs_gallery" translatable="false">Backup docs to gallery</string>
+    <string name="settings_return_stitched_pdf" translatable="false">Return stitched PDF</string>
+    <string name="settings_checks_back" translatable="false">Checks back</string>
+    <string name="settings_checks_back_required" translatable="false">Checks back is required</string>
+    <string name="settings_any_document_type" translatable="false">Any document type</string>
+    <string name="settings_close_camera_submit" translatable="false">Close camera on submit</string>
+    <string name="settings_location_services" translatable="false">Location services</string>
+    <string name="settings_auto_tag_source" translatable="false">Auto tag source</string>
+    <string name="settings_browse" translatable="false">Browse</string>
+    <string name="settings_zoom" translatable="false">Zoom</string>
+    <string name="settings_stitch_counter" translatable="false">Stitch Counter</string>
+    <string name="settings_barcode_extraction" translatable="false">Barcode extraction</string>
+    <string name="settings_auto_tag_device" translatable="false">Auto tag device</string>
+    <string name="settings_auto_tag_lens_version" translatable="false">Auto tag Lens version</string>
+    <string name="settings_auto_tag_platform" translatable="false">Auto tag platform</string>
+    <string name="settings_tags" translatable="false">Tags</string>
+    <string name="settings_original_image_max_size" translatable="false">Original image max size in MB</string>
+    <string name="settings_original_image_size" translatable="false">2.5</string>
+    <string name="settings_set_ocr_regex" translatable="false">Set OCR Regex</string>
+    <string name="settings_set_ocr_corner" translatable="false">Set OCR view corner radius</string>
+    <string name="settings_set_ocr_width" translatable="false">Set OCR view width</string>
+    <string name="settings_set_ocr_height" translatable="false">Set OCR view height</string>
+    <string name="settings_set_tags" translatable="false">Set tags Example: Tag1, Tag2, etc</string>
+    <string name="settings_set_any_document_type" translatable="false">Any document type</string>
+
+    <string name="settings_section_image_processing" translatable="false">Settings image processing</string>
+    <string name="settings_auto_rotate" translatable="false">Auto rotate</string>
+    <string name="settings_auto_doc_detection" translatable="false">Auto doc detection and crop</string>
+    <string name="settings_blur_detection" translatable="false">Blur detection</string>
+    <string name="settings_glare_detection" translatable="false">Glare detection</string>
+    <string name="settings_soft_binarization" translatable="false">Soft binarization</string>
+    <string name="settings_dewarping" translatable="false">Dewarping</string>
+    <string name="settings_auto_skew_correction" translatable="false">Auto skew correction</string>
+    <string name="settings_auto_crop_gallery" translatable="false">Auto crop gallery</string>
+    <string name="settings_gpu" translatable="false">GPU</string>
+
+    <string name="settings_section_ui" translatable="false">Settings UI</string>
+    <string name="settings_primary_color" translatable="false">Primary color</string>
+    <string name="settings_primary_dark_color" translatable="false">Primary dark color</string>
+    <string name="settings_secondary_color" translatable="false">Secondary color</string>
+    <string name="settings_secondary_dark_color" translatable="false">Secondary dark color</string>
+    <string name="settings_accent_color" translatable="false">Accent color</string>
+    <string name="settings_accent_dark_color" translatable="false">Accent dark color</string>
+    <string name="settings_detect_fill_color" translatable="false">Doc detect fill color</string>
+    <string name="settings_submit_background_color" translatable="false">Submit button background color</string>
+    <string name="settings_submit_border_color" translatable="false">Submit button border color</string>
+    <string name="settings_submit_font_color" translatable="false">Submit button font color</string>
+    <string name="settings_doc_detect_stroke_color" translatable="false">Doc detect stroke UI color</string>
+    <string name="settings_submit_corner_radius" translatable="false">Submit button corner radius</string>
+    <string name="settings_dialog_message_color" translatable="false">Dialog message text color</string>
+    <string name="settings_dialog_message_color_dark" translatable="false">Dialog message text color dark</string>
+    <string name="settings_dialog_right_button_text_color" translatable="false">Dialog right button text color</string>
+    <string name="settings_dialog_right_button_text_color_dark" translatable="false">Dialog right button text color dark</string>
+    <string name="settings_dialog_right_button_background_color" translatable="false">Dialog right button background color</string>
+    <string name="settings_dialog_right_button_background_color_dark" translatable="false">Dialog right button background color dark</string>
+    <string name="settings_dialog_left_button_text_color" translatable="false">Dialog left button text color</string>
+    <string name="settings_dialog_left_button_text_color_dark" translatable="false">Dialog left buttonText color dark</string>
+    <string name="settings_toolbar_icons_color" translatable="false">Toolbar icons color</string>
+    <string name="settings_toolbar_icons_color_dark" translatable="false">Toolbar icons color dark</string>
+    <string name="settings_document_type_text_color" translatable="false">Document types color</string>
+    <string name="settings_corner_radius_value" translatable="false">4</string>
+    <string name="settings_manual_crop" translatable="false">Manual crop</string>
+    <string name="settings_more_menu" translatable="false">More menu</string>
+    <string name="settings_more_settings_menu" translatable="false">More settings menu</string>
+    <string name="settings_gallery" translatable="false">Gallery</string>
+    <string name="settings_dictate" translatable="false">Dictate</string>
+    <string name="settings_email_cc" translatable="false">Email CC</string>
+    <string name="settings_email_cc_domain" translatable="false">Email CC domain</string>
+    <string name="settings_cc_domain_value" translatable="false">veryfi.cc</string>
+    <string name="settings_rotate_doc" translatable="false">Rotate doc</string>
+    <string name="settings_show_no_document_detected" translatable="false">Show no document detected warning</string>
+    <string name="settings_shield_protection" translatable="false">Shield protection</string>
+
+    <string name="settings_section_api" translatable="false">Settings API</string>
+    <string name="settings_auto_delete_processing" translatable="false">Auto delete after processing</string>
+    <string name="settings_boost_mode" translatable="false">Boost mode</string>
+    <string name="settings_bounding_boxes" translatable="false">Bounding boxes</string>
+    <string name="settings_detect_blur_response" translatable="false">Detect blur response</string>
+    <string name="settings_detect_glare_response" translatable="false">Detect glare response</string>
+    <string name="settings_is_production" translatable="false">Is production</string>
+    <string name="settings_confidence_details" translatable="false">Confidence details</string>
+    <string name="settings_parse_address" translatable="false">Parse address</string>
+    <string name="settings_webhook_is_on" translatable="false">Webhook</string>
+    <string name="settings_external_id" translatable="false">External ID</string>
+    <string name="settings_na_value" translatable="false">N/A</string>
+
+    <string name="reset" translatable="false">Reset</string>
+    <string name="settings_set_color_title" translatable="false">Set color</string>
+    <string name="settings_set_submit_button_corner_radius" translatable="false">Set submit button corner radius</string>
+    <string name="settings_set_original_image_size" translatable="false">Set original image size</string>
+    <string name="settings_hint_cc_domain" translatable="false">Email CC Domain</string>
+    <string name="settings_hint_external_id" translatable="false">External ID</string>
+    <string name="settings_set_email_cc_domain" translatable="false">Set email CC domain</string>
+    <string name="settings_hint_set_tags" translatable="false">Set tags</string>
+    <string name="settings_hint_any_document_type" translatable="false">Set type Example: ine, colombian_id, passport</string>
+    <string name="settings_set_external_id" translatable="false">Set external ID</string>
+    <string name="switch_camera">Switch camera</string>
 </resources>
 
 

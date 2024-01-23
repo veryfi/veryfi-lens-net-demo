@@ -1,0 +1,33 @@
+﻿<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:gravity="center"
+              android:background="?android:attr/colorBackground"
+              android:orientation="vertical">
+
+
+    <ImageView
+            android:id="@+id/veryfi_logo"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_veryfi_logo_black"/>
+
+
+    <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reading_document"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textSize="20sp"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading_animation" />
+
+</LinearLayout>
