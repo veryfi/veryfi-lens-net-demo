@@ -15,7 +15,7 @@ namespace VeryfiLensAndroidNetDemo.adapters
             this.json = json;
         }
 
-        public override int ItemCount => 2;
+        public override int ItemCount => 3;
 
         public override Fragment CreateFragment(int position)
         {
@@ -29,6 +29,9 @@ namespace VeryfiLensAndroidNetDemo.adapters
                     var jsonFragment = new JsonFragment();
                     jsonFragment.SetJson(json);
                     return jsonFragment;
+                case 2:
+                    var analyticsFragment = new AnalyticsFragment();
+                    return analyticsFragment;
                 default:
                     return new DataFragment();
             }

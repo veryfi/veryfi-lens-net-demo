@@ -142,6 +142,7 @@
     <string name="settings_hint_any_document_type" translatable="false">Set type Example: ine, colombian_id, passport</string>
     <string name="settings_set_external_id" translatable="false">Set external ID</string>
     <string name="switch_camera">Switch camera</string>
+    <string name="user_info_analytics">The following events are the interaction of the user with Lens:</string>
 </resources>
 
 

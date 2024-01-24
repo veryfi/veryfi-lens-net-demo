@@ -47,7 +47,7 @@ namespace VeryfiLensAndroidNetDemo.fragments
         {
             public void OnConfigureTab(TabLayout.Tab tab, int position)
             {
-                tab.SetText(position == 0 ? "Extracted data" : "Json");
+                tab.SetText(position == 0 ? "Extracted data" : (position == 1 ? "Json" : "Analytics"));
             }
         }
     }
