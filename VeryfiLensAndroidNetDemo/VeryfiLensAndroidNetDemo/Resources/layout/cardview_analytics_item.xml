@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   style="?attr/materialCardViewElevatedStyle"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   android:layout_marginTop="10dp"
+                                   app:cardCornerRadius="10dp"
+                                   android:backgroundTint="@color/veryfi_lens_demo_card_background"
+                                   android:padding="16dp"
+                                   android:elevation="6dp"
+                                   app:strokeWidth="1dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp"
+    >
+
+        <TextView
+                android:id="@+id/textViewAnalyticsItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <TextView
+                android:id="@+id/textViewAnalyticsItemSource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray"
+                android:textSize="15sp"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

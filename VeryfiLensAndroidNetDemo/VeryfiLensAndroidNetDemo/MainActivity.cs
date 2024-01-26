@@ -1,23 +1,29 @@
-﻿using Android.Runtime;
+﻿using Android.Content;
+using Android.Runtime;
 using Android.Views;
 using AndroidX.AppCompat.App;
 using AndroidX.ConstraintLayout.Widget;
 using Com.Veryfi.Lens;
 using Com.Veryfi.Lens.Helpers;
 using Org.Json;
+using VeryfiLensAndroidNetDemo.Analytics;
 using VeryfiLensAndroidNetDemo.fragments;
 using VeryfiLensAndroidNetDemo.interfaces;
 
 namespace VeryfiLensAndroidNetDemo;
 
 [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-public class MainActivity : AppCompatActivity, IFragmentCommunication
+public class MainActivity : AppCompatActivity, IFragmentCommunication, IAnalyticsEventListener
 {
     const string CLIENT_ID = "YOUR_CLIENT_ID";
     const string AUTH_USRNE = "YOUR_USERNAME";
     const string AUTH_API_K = "YOUR_API_KEY";
     const string API_URL = "YOUR_URL";
     private bool isSuccessHandled = false;
+    
+    private AnalyticsEventReceiver receiver;
+    private List<(string EventValue, string ParamsValue, string Value)> analyticsEvents = new List<(string, string, string)>();
+
 
     protected override void OnCreate(Bundle savedInstanceState)
     {
@@ -35,6 +41,22 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication
         transaction.Replace(Resource.Id.fragment_container,
             new MenuFragment(CLIENT_ID, AUTH_USRNE, AUTH_API_K, API_URL));
         transaction.CommitAllowingStateLoss();
+    }
+    
+    protected override void OnResume()
+    {
+        base.OnResume();
+        receiver = new AnalyticsEventReceiver();
+        AnalyticsEventReceiver.RegisterListener(this);
+        IntentFilter filter = new IntentFilter("com.veryfi.lens.VeryfiLensAnalyticsEvent");
+        RegisterReceiver(receiver, filter);
+    }
+    
+    protected override void OnPause()
+    {
+        base.OnPause();
+        UnregisterReceiver(receiver);
+        AnalyticsEventReceiver.UnregisterListener();
     }
 
 
@@ -187,5 +209,15 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication
     public void ResetSuccessHandled()
     {
         isSuccessHandled = false;
+    }
+
+    public void OnAnalyticsEventReceived(string eventValue, string paramsValue, string value)
+    {
+        analyticsEvents.Add((eventValue, paramsValue, value));
+    }
+    
+    public List<(string EventValue, string ParamsValue, string Value)> GetAnalyticsEvents()
+    {
+        return analyticsEvents;
     }
 }
