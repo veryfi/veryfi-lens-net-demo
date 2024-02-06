@@ -13,6 +13,6 @@
     <CreatePackage>false</CreatePackage>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="VeryfiLensiOSNetBinding" Version="1.5.24" />
+    <PackageReference Include="VeryfiLensiOSNetBinding" Version="1.5.28" />
   </ItemGroup>
 </Project>
