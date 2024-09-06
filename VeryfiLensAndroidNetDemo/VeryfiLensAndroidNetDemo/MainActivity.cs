@@ -49,7 +49,7 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication, IAnalytic
         receiver = new AnalyticsEventReceiver();
         AnalyticsEventReceiver.RegisterListener(this);
         IntentFilter filter = new IntentFilter("com.veryfi.lens.VeryfiLensAnalyticsEvent");
-        RegisterReceiver(receiver, filter);
+        RegisterReceiver(receiver, filter, ReceiverFlags.Exported);
     }
     
     protected override void OnPause()
