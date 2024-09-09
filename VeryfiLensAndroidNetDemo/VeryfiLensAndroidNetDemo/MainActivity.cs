@@ -15,10 +15,10 @@ namespace VeryfiLensAndroidNetDemo;
 [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
 public class MainActivity : AppCompatActivity, IFragmentCommunication, IAnalyticsEventListener
 {
-    const string CLIENT_ID = "YOUR_CLIENT_ID";
-    const string AUTH_USRNE = "YOUR_USERNAME";
-    const string AUTH_API_K = "YOUR_API_KEY";
-    const string API_URL = "YOUR_URL";
+    const string? CLIENT_ID = "YOUR_CLIENT_ID";
+    const string? AUTH_USRNE = "YOUR_USERNAME";
+    const string? AUTH_API_K = "YOUR_API_KEY";
+    const string? API_URL = "YOUR_URL";
     private bool isSuccessHandled = false;
     
     private AnalyticsEventReceiver receiver;
@@ -122,8 +122,9 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication, IAnalytic
         };
         VeryfiLens.Configure(Application, veryfiLensCredentials, veryfiLensSettings);
     }
+    
 
-    public override bool OnCreateOptionsMenu(IMenu menu)
+    public override bool OnCreateOptionsMenu(IMenu? menu)
     {
         return true;
     }
