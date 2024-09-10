@@ -209,9 +209,9 @@ public class MenuFragment : Fragment
     {
         var settings = SettingsManager.Instance;
 
-        var documentType = new List<DocumentType?>
+        var documentType = new List<DocumentType>
         {
-            this.documentType
+            this.documentType ?? DocumentType.Receipt! // Provide a default value if this.documentType is null
         };
 
         VeryfiLensSettings veryfiLensSettings = new VeryfiLensSettings
@@ -220,7 +220,8 @@ public class MenuFragment : Fragment
             StitchIsOn = settings.stitchIsOn,
             MultipleDocumentsIsOn = settings.MultipleDocumentsIsOn,
             ZoomIsOn = settings.ZoomIsOn,
-            DocumentTypes = documentType
+            DocumentTypes = documentType,
+            ShowDocumentTypes = true,
         };
 
         var veryfiLensCredentials = new VeryfiLensCredentials

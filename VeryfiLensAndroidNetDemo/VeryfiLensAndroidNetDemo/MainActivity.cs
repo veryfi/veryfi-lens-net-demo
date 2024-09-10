@@ -2,7 +2,6 @@
 using Android.Runtime;
 using Android.Views;
 using AndroidX.AppCompat.App;
-using AndroidX.ConstraintLayout.Widget;
 using Com.Veryfi.Lens;
 using Com.Veryfi.Lens.Helpers;
 using Org.Json;
@@ -75,7 +74,7 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication, IAnalytic
         };
         var documentTypes = new List<DocumentType>
         {
-            DocumentType.Receipt
+            DocumentType.Receipt!
         };
         VeryfiLensSettings veryfiLensSettings = new VeryfiLensSettings
         {
@@ -99,8 +98,6 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication, IAnalytic
             PrimaryColor = "#53BF8A",
             AccentColor = "#8B229D",
             Production = false,
-            OriginalImageMaxSizeInMB = new Java.Lang.Float(2.5),
-            StitchedPDFPixelDensityMultiplier = new Java.Lang.Float(2.0),
             SaveLogsIsOn = true,
             ShareLogsIsOn = true,
             GpuIsOn = true,
@@ -109,7 +106,6 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication, IAnalytic
             AutoSubmitDocumentOnCapture = false,
             AutoRotateIsOn = false,
             ExternalId = "testExternalId1234",
-            BrandImage = new Java.Lang.Integer(Resource.Drawable.ic_veryfi_lens_logo),
             GalleryIsOn = false,
             AllowSubmitUndetectedDocsIsOn = true
         };
