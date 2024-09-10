@@ -33,12 +33,12 @@ public class AnalyticsAdapter : RecyclerView.Adapter
 
 public class AnalyticsViewHolder : RecyclerView.ViewHolder
 {
-    public TextView TextView { get; private set; }
-    public TextView TextViewSource { get; private set; }
-
+    public TextView TextView { get; private set; } = null!;
+    public TextView TextViewSource { get; private set; } = null!;
+    
     public AnalyticsViewHolder(View itemView) : base(itemView)
     {
-        TextView = itemView.FindViewById<TextView>(Resource.Id.textViewAnalyticsItem);
-        TextViewSource = itemView.FindViewById<TextView>(Resource.Id.textViewAnalyticsItemSource);
+        TextView = itemView.FindViewById<TextView>(Resource.Id.textViewAnalyticsItem)!;
+        TextViewSource = itemView.FindViewById<TextView>(Resource.Id.textViewAnalyticsItemSource)!;
     }
 }

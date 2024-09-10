@@ -12,14 +12,18 @@ namespace VeryfiLensAndroidNetDemo.fragments;
 
 public class MenuFragment : Fragment
 {
-    private String clientId;
-    private String userName;
-    private String authApi;
-    private String url;
-    private DocumentType documentType;
+    private string? clientId;
+    private string? userName;
+    private string? authApi;
+    private string? url;
+    private DocumentType? documentType;
 
+    // Add a parameterless constructor
+    public MenuFragment()
+    {
+    }
 
-    public MenuFragment(String clientId, String userName, String authApi, String url)
+    public MenuFragment(string? clientId, string? userName, string? authApi, string? url)
     {
         this.clientId = clientId;
         this.userName = userName;
@@ -28,9 +32,9 @@ public class MenuFragment : Fragment
     }
 
 
-    private IFragmentCommunication fragmentCommunication;
+    private IFragmentCommunication? fragmentCommunication;
 
-    public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    public override View OnCreateView(LayoutInflater inflater, ViewGroup? container, Bundle? savedInstanceState)
     {
         var view = inflater.Inflate(Resource.Layout.fragment_menu, container, false);
 
@@ -177,7 +181,7 @@ public class MenuFragment : Fragment
         }
     }
 
-    private void FabOnClick(DocumentType documentType, object sender, EventArgs eventArgs)
+    private void FabOnClick(DocumentType? documentType, object sender, EventArgs eventArgs)
     {
         this.documentType = documentType;
         fragmentCommunication.ResetSuccessHandled();
@@ -207,7 +211,7 @@ public class MenuFragment : Fragment
 
         var documentType = new List<DocumentType>
         {
-            this.documentType
+            this.documentType ?? DocumentType.Receipt! // Provide a default value if this.documentType is null
         };
 
         VeryfiLensSettings veryfiLensSettings = new VeryfiLensSettings
@@ -216,7 +220,8 @@ public class MenuFragment : Fragment
             StitchIsOn = settings.stitchIsOn,
             MultipleDocumentsIsOn = settings.MultipleDocumentsIsOn,
             ZoomIsOn = settings.ZoomIsOn,
-            DocumentTypes = documentType
+            DocumentTypes = documentType,
+            ShowDocumentTypes = true,
         };
 
         var veryfiLensCredentials = new VeryfiLensCredentials
