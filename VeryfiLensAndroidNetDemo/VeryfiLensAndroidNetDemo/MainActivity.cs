@@ -107,7 +107,9 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication, IAnalytic
             AutoRotateIsOn = false,
             ExternalId = "testExternalId1234",
             GalleryIsOn = false,
-            AllowSubmitUndetectedDocsIsOn = true
+            AllowSubmitUndetectedDocsIsOn = true,
+            BarcodeExtractionIsOn = true,
+            AutoCaptureFrameConfidence = 20
         };
         var veryfiLensCredentials = new VeryfiLensCredentials
         {

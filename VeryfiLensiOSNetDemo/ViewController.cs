@@ -91,7 +91,9 @@ public partial class ViewController : UIViewController
             GalleryIsOn = true,
             Tags = tags,
             BackupDocsToiCloud = true,
-            AllowSubmitUndetectedDocsIsOn = true
+            AllowSubmitUndetectedDocsIsOn = true,
+            BarcodeExtractionIsOn = true,
+            AutoCaptureFrameConfidence = 20
         };
         var veryfiLensCredentials = new VeryfiLensCredentials(CLIENT_ID, AUTH_USRNE, AUTH_API_K, API_URL);
         Action<bool> completion = (success) =>
