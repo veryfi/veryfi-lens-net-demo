@@ -109,7 +109,8 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication, IAnalytic
             GalleryIsOn = false,
             AllowSubmitUndetectedDocsIsOn = true,
             BarcodeExtractionIsOn = true,
-            AutoCaptureFrameConfidence = 20
+            AutoCaptureFrameConfidence = 20,
+            AutoCaptureMarginRatio = 0.08
         };
         var veryfiLensCredentials = new VeryfiLensCredentials
         {
