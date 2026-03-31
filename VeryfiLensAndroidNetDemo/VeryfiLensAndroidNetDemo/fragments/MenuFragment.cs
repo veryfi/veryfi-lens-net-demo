@@ -159,7 +159,7 @@ public class MenuFragment : Fragment
         var btnBankStatementsSettings = view.FindViewById<ImageView>(Resource.Id.btn_bank_statements_settings);
         if (btnBankStatements != null)
         {
-            documentType = DocumentType.BankStatements;
+            documentType = DocumentType.BankStatement;
             btnBankStatements.Click += BankStatementsOnClick;
         }
 
@@ -248,7 +248,7 @@ public class MenuFragment : Fragment
     private void W9OnClick(object sender, EventArgs e) => FabOnClick(DocumentType.W9, sender, e);
 
     private void BankStatementsOnClick(object sender, EventArgs e) =>
-        FabOnClick(DocumentType.BankStatements, sender, e);
+        FabOnClick(DocumentType.BankStatement, sender, e);
 
-    private void BarcodeOnClick(object sender, EventArgs e) => FabOnClick(DocumentType.Barcodes, sender, e);
+    private void BarcodeOnClick(object sender, EventArgs e) => FabOnClick(DocumentType.Barcode, sender, e);
 }
