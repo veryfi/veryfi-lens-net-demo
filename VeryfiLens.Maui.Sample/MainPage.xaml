@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VeryfiLens.Maui.Sample.MainPage"
+             Title="Veryfi Lens MAUI Sample">
+
+    <VerticalStackLayout Padding="20" Spacing="12">
+        <Label Text="Veryfi Lens MAUI Sample"
+               FontSize="22"
+               FontAttributes="Bold" />
+
+        <Label Text="Lens configures on launch. Use the buttons below to open camera, gallery, or document browser."
+               FontSize="12" />
+
+        <Button x:Name="OpenCameraBtn"
+                Text="Open Camera"
+                IsEnabled="False"
+                Clicked="OnOpenCameraClicked"
+                HorizontalOptions="Fill" />
+
+        <Button x:Name="OpenGalleryBtn"
+                Text="Open Gallery"
+                IsEnabled="False"
+                Clicked="OnOpenGalleryClicked"
+                HorizontalOptions="Fill" />
+
+        <Button x:Name="OpenBrowserBtn"
+                Text="Open Document Browser"
+                IsEnabled="False"
+                Clicked="OnOpenDocumentBrowserClicked"
+                HorizontalOptions="Fill" />
+
+        <ScrollView HeightRequest="400">
+            <Label x:Name="LogLabel"
+                   FontFamily="Courier"
+                   FontSize="11"
+                   LineBreakMode="WordWrap" />
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>
