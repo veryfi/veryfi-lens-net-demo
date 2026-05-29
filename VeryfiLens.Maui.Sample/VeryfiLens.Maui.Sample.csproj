@@ -121,7 +121,7 @@
 	<ItemGroup>
 		<PackageReference Include="VeryfiLens.Maui" Version="2.0.57" />
 		<!-- Required for Android when consuming via NuGet (Compose annotation android.aar vs jvm.jar). -->
-		<PackageReference Include="Xamarin.AndroidX.Compose.Runtime.Annotation.Jvm" Version="1.10.0.1" ExcludeAssets="all" Condition="'$(TargetFramework)' == '' or $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'" />
+		<!-- <PackageReference Include="Xamarin.AndroidX.Compose.Runtime.Annotation.Jvm" Version="1.10.0.1" ExcludeAssets="all" Condition="'$(TargetFramework)' == '' or $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'" /> -->
 	</ItemGroup>
 
 
