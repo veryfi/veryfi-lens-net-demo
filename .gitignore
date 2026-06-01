@@ -349,5 +349,10 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
+# MAUI sample: local credentials and build output
+VeryfiLens.Maui.Sample/Resources/Raw/appsettings.local.json
+VeryfiLens.Maui.Sample/bin/
+VeryfiLens.Maui.Sample/obj/
+
 # Misc
 .DS_Store
