@@ -4,7 +4,7 @@
 
 	<PropertyGroup>
 
-		<TargetFrameworks>net10.0-android;net10.0-ios</TargetFrameworks>
+		<TargetFrameworks>net10.0-android;net10.0-ios27.0</TargetFrameworks>
 
 
 
@@ -62,11 +62,12 @@
 
 
 
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">12.2</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">15.0</SupportedOSPlatformVersion>
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">23</SupportedOSPlatformVersion>
 
 		<ValidateXcodeVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">false</ValidateXcodeVersion>
+		<NoWarn>$(NoWarn);XCODE_27_0_PREVIEW</NoWarn>
 
 	</PropertyGroup>
 
@@ -119,7 +120,7 @@
 
 
 	<ItemGroup>
-		<PackageReference Include="VeryfiLens.Maui" Version="2.0.58" />
+		<PackageReference Include="VeryfiLens.Maui" Version="2.0.60" />
 		<!-- Required for Android when consuming via NuGet (Compose annotation android.aar vs jvm.jar). -->
 		<!-- <PackageReference Include="Xamarin.AndroidX.Compose.Runtime.Annotation.Jvm" Version="1.10.0.1" ExcludeAssets="all" Condition="'$(TargetFramework)' == '' or $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'" /> -->
 	</ItemGroup>

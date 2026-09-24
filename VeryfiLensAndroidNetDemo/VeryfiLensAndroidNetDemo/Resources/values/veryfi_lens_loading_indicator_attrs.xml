@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!--
+    veryfi-lens-sdk style VeryfiLensLoadingIndicatorView references these custom attrs,
+    but the vendored AAR's declare-styleable omits them and AAPT fails at app link time.
+  -->
+  <attr name="containerWidth" format="dimension" />
+  <attr name="containerHeight" format="dimension" />
+  <attr name="containerColor" format="color" />
+  <attr name="indicatorSize" format="dimension" />
+</resources>
