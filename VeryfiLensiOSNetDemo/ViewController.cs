@@ -79,7 +79,6 @@ public partial class ViewController : UIViewController
             MoreMenuIsOn = true,
             DataExtractionEngine = DataExtractionEngine.VeryfiCloudAPI,
             Categories = categories,
-            IsProduction = false,
             OriginalImageMaxSizeInMB = 2.5f,
             StitchedPDFPixelDensityMultiplier = 2.0f,
             SaveLogsIsOn = true,

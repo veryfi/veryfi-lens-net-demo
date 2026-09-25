@@ -97,7 +97,6 @@ public class MainActivity : AppCompatActivity, IFragmentCommunication, IAnalytic
             Categories = categories,
             PrimaryColor = "#53BF8A",
             AccentColor = "#8B229D",
-            Production = false,
             SaveLogsIsOn = true,
             ShareLogsIsOn = true,
             GpuIsOn = true,
