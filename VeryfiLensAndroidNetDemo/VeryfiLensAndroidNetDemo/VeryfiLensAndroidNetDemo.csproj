@@ -7,13 +7,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationId>com.companyname.VeryfiLensAndroidNetDemo</ApplicationId>
     <ApplicationVersion>1</ApplicationVersion>
-    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <ApplicationDisplayVersion>2.0.62</ApplicationDisplayVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Com.Airbnb.Android.Lottie" Version="4.2.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.14.0" />
-    <PackageReference Include="VeryfiLensAndroidNetBinding" Version="2.0.61" />
+    <PackageReference Include="VeryfiLensAndroidNetBinding" Version="2.0.62" />
     <PackageReference Include="Xamarin.AndroidX.Compose.Runtime.Annotation.Jvm" Version="1.10.0.1" ExcludeAssets="all" />
   </ItemGroup>
   <ItemGroup>
