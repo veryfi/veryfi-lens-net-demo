@@ -14,6 +14,6 @@
     <CreatePackage>false</CreatePackage>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="VeryfiLensiOSNetBinding" Version="2.0.61" />
+    <PackageReference Include="VeryfiLensiOSNetBinding" Version="2.0.62" />
   </ItemGroup>
 </Project>
