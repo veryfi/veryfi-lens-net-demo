@@ -8,6 +8,7 @@ description: >-
   strips and caps, W-2, and W-9, and the UploadImages no-UI path. Use when
   adding Veryfi Lens to a MAUI app, porting off legacy Xamarin bindings, or
   answering a MAUI capture, upload, or extraction question.
+  Covers Lens analytics events and notification subscription (events.md).
 ---
 
 # Veryfi Lens MAUI integration
@@ -175,3 +176,7 @@ MAUI route:
 - Platform asymmetry:
 - Not bridged:
 ```
+
+## Analytics and metrics
+
+Lens already records interaction events. When the host wants those metrics, subscribe as in [events.md](events.md). Use the event names listed there. Do not invent names. On Android, register `com.veryfi.lens.VeryfiLensSecureAnalyticsEvent`, not the deprecated `com.veryfi.lens.VeryfiLensAnalyticsEvent`. A plugin host calls the plugin observe API instead of registering that broadcast itself.
